@@ -5,6 +5,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import uuid
 import os
+from mlp import MLPModule
 
 # Load model + explainer
 with open("NeuralHestonRegressor.pkl", "rb") as f:
@@ -49,4 +50,5 @@ demo = gr.Interface(
 )
 
 if __name__ == "__main__":
+
     demo.launch(server_name="0.0.0.0", server_port=7860)
