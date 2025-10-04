@@ -5,11 +5,20 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import uuid
 import os
+import torch
 from mlp import MLPModule
+
+DEVICE = "cpu"
 
 # Load model + explainer
 with open("NeuralHestonRegressor.pkl", "rb") as f:
     model = joblib.load(f)
+
+def predict_for_shap(X_input):
+    X_t = torch.tensor(X_input.astype(np.float32)).to(DEVICE)
+    with torch.no_grad():
+        preds = model.module_.forward(X_t).cpu().numpy()
+    return preds
 
 with open("ModelExplainer.pkl", "rb") as f:
     explainer = joblib.load(f)
@@ -52,3 +61,4 @@ demo = gr.Interface(
 if __name__ == "__main__":
 
     demo.launch(server_name="0.0.0.0", server_port=7860)
+
