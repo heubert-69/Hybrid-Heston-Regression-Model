@@ -144,6 +144,8 @@ MIT License. Free for research and educational use.
 
 ---
 
+Deployment Link: https://huggingface.co/spaces/KawgKawgKawg/Hybrid-Heston-Regression
+
 👨‍💻 Author
 
 Developed by Heubert-69 — Data Scientist & ML Engineer
