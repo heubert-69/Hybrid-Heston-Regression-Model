@@ -75,7 +75,7 @@ AAPL_price	AAPL_ret	AAPL_ma5	AAPL_ma20	AAPL_rv_5	TSLA_price	TSLA_ma5	...
 | AMZN  | 0.01718 | 0.01225 | 0.0949 | 56.17% |
 | TSLA  | 0.03900 | 0.02821 | 0.0690 | 57.05% |
 ```
-➡️ The model achieves ~53–56% directional accuracy, which is significant for short-term trading.
+➡️ The model achieves ~53–57% directional accuracy, which is significant for short-term trading.
 ---
 
 🔹 Trading Performance:
