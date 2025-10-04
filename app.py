@@ -1,6 +1,6 @@
 import gradio as gr
 import shap
-import pickle
+import joblib
 import pandas as pd
 import matplotlib.pyplot as plt
 import uuid
@@ -8,10 +8,10 @@ import os
 
 # Load model + explainer
 with open("NeuralHestonRegressor.pkl", "rb") as f:
-    model = pickle.load(f)
+    model = joblib.load(f)
 
 with open("ModelExplainer.pkl", "rb") as f:
-    explainer = pickle.load(f)
+    explainer = joblib.load(f)
 
 # Folder for SHAP plots
 PLOT_DIR = "shap_plots"
@@ -49,4 +49,5 @@ demo = gr.Interface(
 )
 
 if __name__ == "__main__":
+
     demo.launch(server_name="0.0.0.0", server_port=7860)
