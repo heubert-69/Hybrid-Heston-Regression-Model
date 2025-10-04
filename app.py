@@ -3,14 +3,15 @@ import shap
 import joblib
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 import uuid
 import os
-import torch
 from mlp import MLPModule
+import torch
 
 DEVICE = "cpu"
 
-# Load model + explainer
+# Load model
 with open("NeuralHestonRegressor.pkl", "rb") as f:
     model = joblib.load(f)
 
@@ -20,8 +21,9 @@ def predict_for_shap(X_input):
         preds = model.module_.forward(X_t).cpu().numpy()
     return preds
 
-with open("ModelExplainer.pkl", "rb") as f:
-    explainer = joblib.load(f)
+# Load background dataset and build explainer
+X_background = joblib.load("background.pkl")
+explainer = shap.Explainer(predict_for_shap, X_background)
 
 # Folder for SHAP plots
 PLOT_DIR = "shap_plots"
@@ -35,7 +37,7 @@ def predict_and_explain(file):
     preds = model.predict(df)
 
     # SHAP values
-    shap_values = explainer.shap_values(df)
+    shap_values = explainer(df)
 
     # Save SHAP summary plot
     plot_path = os.path.join(PLOT_DIR, f"{uuid.uuid4()}.png")
@@ -59,6 +61,4 @@ demo = gr.Interface(
 )
 
 if __name__ == "__main__":
-
     demo.launch(server_name="0.0.0.0", server_port=7860)
-
