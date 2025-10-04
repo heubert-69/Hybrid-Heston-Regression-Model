@@ -66,13 +66,15 @@ AAPL_price	AAPL_ret	AAPL_ma5	AAPL_ma20	AAPL_rv_5	TSLA_price	TSLA_ma5	...
 ---
 📑 Results & Analysis
 🔹 ML Metrics Per Asset
-Asset	RMSE	MAE	R²	Directional Accuracy
+```bash
+| Asset | RMSE   | MAE   | R²    | Directional Accuracy |
+|-------|--------|-------|-------|-----------------------|
 | AAPL  | 0.01896 | 0.01341 | 0.0693 | 55.91% |
 | MSFT  | 0.02128 | 0.01523 | 0.0426 | 56.69% |
 | GOOG  | 0.01904 | 0.01357 | 0.0525 | 57.42% |
 | AMZN  | 0.01718 | 0.01225 | 0.0949 | 56.17% |
 | TSLA  | 0.03900 | 0.02821 | 0.0690 | 57.05% |
-
+```
 ➡️ The model achieves ~53–56% directional accuracy, which is significant for short-term trading.
 ---
 
