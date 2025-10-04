@@ -67,22 +67,21 @@ AAPL_price	AAPL_ret	AAPL_ma5	AAPL_ma20	AAPL_rv_5	TSLA_price	TSLA_ma5	...
 📑 Results & Analysis
 🔹 ML Metrics Per Asset
 Asset	RMSE	MAE	R²	Directional Accuracy
-AAPL	0.0189	0.0134	0.0663	52.88%
-MSFT	0.0213	0.0152	0.0363	55.73%
-GOOG	0.0190	0.0136	0.0483	55.53%
-AMZN	0.0172	0.0122	0.0897	56.46%
-TSLA	0.0390	0.0282	0.0684	55.27%
+| AAPL  | 0.01896 | 0.01341 | 0.0693 | 55.91% |
+| MSFT  | 0.02128 | 0.01523 | 0.0426 | 56.69% |
+| GOOG  | 0.01904 | 0.01357 | 0.0525 | 57.42% |
+| AMZN  | 0.01718 | 0.01225 | 0.0949 | 56.17% |
+| TSLA  | 0.03900 | 0.02821 | 0.0690 | 57.05% |
 
 ➡️ The model achieves ~53–56% directional accuracy, which is significant for short-term trading.
 ---
 
 🔹 Trading Performance:
-
-Annual Return: 39.91%
-Annual Volatility: 14.42%
-Sharpe Ratio: 2.77
-Sortino Ratio: 4.82
-Max Drawdown: -12.7%
+Annual Return: 50.0%
+Annual Volatility: 14.8%
+Sharpe Ratio: 3.37
+Sortino Ratio: 5.13
+Max Drawdown: -18.3
 
 ➡️ High Sharpe & Sortino ratios indicate strong risk-adjusted returns, with relatively controlled drawdowns.
 
@@ -120,6 +119,7 @@ shap
 pandas
 matplotlib
 scikit-learn
+joblib
 ---
 
 🧠 Model Details:
